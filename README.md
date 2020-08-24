@@ -1,2 +1,9 @@
 # ZbxHistryReport
-Zabbix Histry Report
+Zabbix APIをラッパーして、月次, 日次,のレポート等を作成するWebサイト  
+
+## 途中経過メモ
+ - HistoryGet API に対してitemidを引数として追加
+ - 月次, 日次毎にAPIの分割が必要
+ - 数値データからグラフ作りの仕組み必要
+ - 対象のアイテムIDを検索する仕組みが必要
+ - レポートとして、セットになるアイテムIDの保管及びPDF等の作成仕組み作りが必要
