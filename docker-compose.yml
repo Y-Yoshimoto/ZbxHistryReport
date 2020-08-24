@@ -1,0 +1,28 @@
+version: '3'
+services:
+    # APIServer_nginx
+    nginx_forunit:
+        build: "nginx_custom"
+        image: "nginx_forunit"
+        restart: "always"
+        ports:
+            - "3380:80"
+            - "443"
+        depends_on:
+            - "unitpy_api"
+        environment:
+            TZ: Asia/Tokyo
+
+
+    # APIServer_unitpy_api
+    unitpy_api:
+        build: "unitpy_custom"
+        image: "unitpy_api"
+        restart: "no"
+        ports:
+            - "8300"
+        volumes:
+             - ./unitpy_custom/contents/:/www/snippet/
+        environment:
+            TZ: Asia/Tokyo
+            PYTHONUNBUFFERED: "no"

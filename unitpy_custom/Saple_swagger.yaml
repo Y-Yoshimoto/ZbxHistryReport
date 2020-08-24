@@ -1,0 +1,37 @@
+swagger: "2.0"
+info:
+  description: "Swaggerのサンプルです."
+  version: 1.0.0
+  title: Sample API
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: api@sample.com
+  license:
+    name: MIT License
+    url: http://ja.wikipedia.org/wiki/MIT_License/
+paths:
+  /idget/{KeyID}:
+    get:
+      summary: "説明見出し"
+      description: "APIに関する説明"
+      parameters:
+      - name: "KeyID"
+        in: "path"   # パラメータの種類{query, header, path, formData, body}
+        description: "KeyID"
+        required: true  # 必須or任意
+        type: "integer"  #　型
+        format: "int64"  # フォーマット
+      # レスポンス
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            type: "object"
+            properties:
+              id:
+                type: "integer"
+                format: "int64"
+              name:
+                type: "string"
+                example: "doggie"
+# https://qiita.com/rllllho/items/53a0023b32f4c0f8eabb
